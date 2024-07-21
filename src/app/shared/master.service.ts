@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BlogModel } from './store/Blog/Blog.model';
+import { EmployeeModel } from './store/Employee/Employee.model';
 import { Observable,tap } from 'rxjs';
 
 @Injectable({
@@ -12,24 +12,24 @@ export class MasterService {
     return true;
   }
 
-  GetAllBlogs(): Observable<BlogModel[]> {
-    return this.http.get<BlogModel[]>("http://localhost:3000/Blogs")
+  GetAllEmployees(): Observable<EmployeeModel[]> {
+    return this.http.get<EmployeeModel[]>("http://localhost:3000/Employees")
   }
 
-  CreateBlog(bloginput: BlogModel) {
-    return this.http.post("http://localhost:3000/Blogs", bloginput).pipe(
+  CreateEmployee(employeeinput: EmployeeModel) {
+    return this.http.post("http://localhost:3000/Employees", employeeinput).pipe(
       tap(()=>{
-        this.http.get<BlogModel>("http://localhost:3000/Blogs?_limit=1&_sort=id&_order=desc");
+        this.http.get<EmployeeModel>("http://localhost:3000/Employees?_limit=1&_sort=id&_order=desc");
       })
     )
   }
 
-  UpdateBlog(bloginput: BlogModel) {
-    return this.http.put("http://localhost:3000/Blogs/"+bloginput.id, bloginput);
+  UpdateEmployee(employeeinput: EmployeeModel) {
+    return this.http.put("http://localhost:3000/Employees/"+employeeinput.id, employeeinput);
   }
 
-  DeleteBlog(blogid:number) {
-    return this.http.delete("http://localhost:3000/Blogs/"+blogid);
+  DeleteEmployee(employeeid:number) {
+    return this.http.delete("http://localhost:3000/Employees/"+employeeid);
   }
 
 }

@@ -1,9 +1,9 @@
-import { blogReducer } from "../Blog/Blog.reducers";
+import { employeeReducer } from "../Employee/Employee.reducers";
 import { AppReducer } from "./App.Reducer";
 import {routerReducer} from '@ngrx/router-store'
 
 export const AppState={
-    blog:blogReducer,
+    employee:employeeReducer,
     app:AppReducer,
     router:routerReducer
 }

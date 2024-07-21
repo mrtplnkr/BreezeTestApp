@@ -1,5 +1,6 @@
-import { Blogs } from "../Blog/Blog.model";
+import { Employee } from "../Employee/Employee.model";
 
 export interface AppStateModel{
-    IsLoaded:boolean,
+    EmployeeDetails?: Employee
+    IsLoaded: boolean,
 }

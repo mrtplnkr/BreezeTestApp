@@ -5,7 +5,7 @@ import { ConfirmApplicationComponent } from './component/confirmApplication/conf
 
 const routes: Routes = [
   {path:"",component:HomeComponent},
-  {path:"blog",component:ConfirmApplicationComponent}
+  {path:"employee",component:ConfirmApplicationComponent}
 ];
 
 @NgModule({

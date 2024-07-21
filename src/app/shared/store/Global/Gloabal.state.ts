@@ -1,5 +1,6 @@
 import { AppStateModel } from "./AppState.Model";
 
 export const GlobalState:AppStateModel={
-    IsLoaded:false
+    IsLoaded: false,
+    EmployeeDetails: undefined
 }
