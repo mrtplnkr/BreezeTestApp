@@ -1,12 +1,9 @@
 import { createFeatureSelector, createSelector } from "@ngrx/store";
 import { EmployeeModel } from "./Employee.model";
+import { AppStateModel } from "../Global/AppState.Model";
 
-const getemployeestate=createFeatureSelector<EmployeeModel>('employee');
+const getEmployeeState=createFeatureSelector<AppStateModel>('employee');
 
-export const getEmployeeName = createSelector(getemployeestate,(state)=>{
-    return state.firstname
-});
-
-export const getEmployeeInfo = createSelector(getemployeestate,(state)=>{
-    return state
+export const getEmployeeInfo = createSelector(getEmployeeState, state=>{
+    return state.employee
 });

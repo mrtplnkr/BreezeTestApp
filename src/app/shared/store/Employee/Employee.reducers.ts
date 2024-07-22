@@ -6,7 +6,7 @@ const _employeeReducer = createReducer(EmployeeState,
     on(addemployee,(state,action)=>{
         return{
             ...state,
-            ...action
+            employee: action
         }
     }),
 )

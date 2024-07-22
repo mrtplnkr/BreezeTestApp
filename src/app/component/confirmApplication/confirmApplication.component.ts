@@ -15,8 +15,8 @@ export class ConfirmApplicationComponent implements OnInit {
   constructor(private store: Store<AppStateModel>, private router: Router) {
   }
   ngOnInit(): void {
-    this.store.select(getEmployeeInfo).subscribe(res => {
-      if (res.firstname) {
+    this.store.select(getEmployeeInfo).subscribe((res?: EmployeeModel) => {
+      if (res) {
         this.employeeDetails = res;
       }
       else {
