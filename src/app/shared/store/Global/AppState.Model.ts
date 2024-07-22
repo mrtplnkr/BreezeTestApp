@@ -1,6 +1,4 @@
-import { Employee } from "../Employee/Employee.model";
+import { EmployeeModel } from "../Employee/Employee.model";
 
-export interface AppStateModel{
-    EmployeeDetails?: Employee
-    IsLoaded: boolean,
+export interface AppStateModel extends EmployeeModel{
 }

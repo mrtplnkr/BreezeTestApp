@@ -47,10 +47,11 @@
                 </div>
             </div>
             <div>
-                <mat-label for="lookingforwork" [ngClass]="formSubmitted && personform.controls.lookingforwork.errors ? 'error-border' : ''">
-                    <input type="checkbox" formControlName="lookingforwork" name="lookingforwork" required/>
-                    looking for work ?
-                </mat-label>
+                <label class="pointer" mat-label for="lookingforwork"
+                    [ngClass]="formSubmitted && personform.controls.lookingforwork.errors ? 'error-border' : ''">
+                        <input type="checkbox" formControlName="lookingforwork" id="lookingforwork" />
+                        looking for work ?
+                </label>
             </div>
             <div  fxFlex="20%">
                 <div *ngIf="formSubmitted && personform.invalid" class="error-text">Please select all fields !</div>

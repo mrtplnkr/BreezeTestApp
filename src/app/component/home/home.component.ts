@@ -21,8 +21,8 @@ export class HomeComponent {
   personform = this.builder.group({
     firstname: this.builder.control('', Validators.required),
     lastname: this.builder.control('', Validators.required),
-    lookingforwork: this.builder.control(true, Validators.requiredTrue),
-    selectedLevel: this.builder.control(0, Validators.required),
+    lookingforwork: this.builder.control(true),
+    selectedLevel: this.builder.control(undefined, Validators.required),
     mathTest: this.builder.control(''),
     aLetterTest: this.builder.control('')
   }, {
@@ -35,8 +35,6 @@ export class HomeComponent {
   }
 
   SaveEmployees() {
-    console.log('submitting', this.personform);
-
     this.formSubmitted = true;
 
     if (!this.personform.valid) return;
@@ -48,8 +46,7 @@ export class HomeComponent {
       level: this.personform.value.selectedLevel!
     }));
     
-    //navigate to next form
-    this.router.navigate(['/employeeConfirmation', {}])
+    this.router.navigate(['/confirm'])
   }
 
   ngOnInit(): void {

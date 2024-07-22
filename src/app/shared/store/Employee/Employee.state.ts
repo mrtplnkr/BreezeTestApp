@@ -1,11 +1,9 @@
-import { EmployeeModel, Employee } from "./Employee.model";
+import { EmployeeModel } from "./Employee.model";
 
 
-export const EmployeeState: Employee = {
-    Errormessage: ''
-    //IsLoaded:false
-    ,
-    id: 0,
-    title: "",
-    description: ""
+export const EmployeeState: EmployeeModel = {
+    firstname: "",
+    lastname: "",
+    lookingforwork: false,
+    level: 0,
 }

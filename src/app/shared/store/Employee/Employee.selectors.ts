@@ -1,12 +1,13 @@
 import { createFeatureSelector, createSelector } from "@ngrx/store";
-import { Employee } from "./Employee.model";
+import { EmployeeModel } from "./Employee.model";
 
-const getemployeestate=createFeatureSelector<Employee>('employee');
+const getemployeestate=createFeatureSelector<EmployeeModel>('employee');
 
 export const getemployee=createSelector(getemployeestate,(state)=>{
-    return state.description
+    return state.firstname
 });
 
 export const getemployeeinfo=createSelector(getemployeestate,(state)=>{
+
     return state
 });
