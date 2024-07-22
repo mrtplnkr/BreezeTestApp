@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { addemployee } from 'src/app/shared/store/Employee/Employee.actions';
+import { Level, LevelOptions } from 'src/app/shared/store/Employee/Employee.model';
 import { AppStateModel } from 'src/app/shared/store/Global/AppState.Model';
 import { LevelValidator } from 'src/app/validators/LevelValidator';
 
@@ -12,12 +13,12 @@ import { LevelValidator } from 'src/app/validators/LevelValidator';
   styleUrls: ['./employeeDetails.component.css']
 })
 export class EmployeeDetailsComponent {
+  levels = LevelOptions;
   formSubmitted: boolean = false;
   constructor(private store: Store<AppStateModel>, 
     private builder: FormBuilder, private router: Router) {
   }
 
-  levels = [{id: 1,name: 'junior'}, {id: 2, name: 'mid'}, {id: 3, name: 'senior'}]
   personform = this.builder.group({
     firstname: this.builder.control('', Validators.required),
     lastname: this.builder.control('', Validators.required),
