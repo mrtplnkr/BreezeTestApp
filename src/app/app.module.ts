@@ -8,7 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './Material.Module';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { HomeComponent } from './component/home/home.component';
+import { EmployeeDetailsComponent } from './component/employeeDetails/employeeDetails.component';
 import { MenuheaderComponent } from './component/menuheader/menuheader.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ConfirmApplicationComponent } from './component/confirmApplication/confirmApplication.component';
@@ -17,7 +17,7 @@ import { AppState } from './shared/store/Global/App.state';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
+    EmployeeDetailsComponent,
     MenuheaderComponent,
     ConfirmApplicationComponent
   ],

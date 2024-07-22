@@ -1,6 +1,5 @@
 import { AbstractControl } from '@angular/forms';
 
-// custom validator to check that two fields match
 export function LevelValidator(controlName: string) {
     return (group: AbstractControl) => {
         const level = group.get('selectedLevel')?.value;

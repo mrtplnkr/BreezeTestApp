@@ -7,11 +7,11 @@ import { AppStateModel } from 'src/app/shared/store/Global/AppState.Model';
 import { LevelValidator } from 'src/app/validators/LevelValidator';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-employee-details',
+  templateUrl: './employeeDetails.component.html',
+  styleUrls: ['./employeeDetails.component.css']
 })
-export class HomeComponent {
+export class EmployeeDetailsComponent {
   formSubmitted: boolean = false;
   constructor(private store: Store<AppStateModel>, 
     private builder: FormBuilder, private router: Router) {
@@ -47,10 +47,6 @@ export class HomeComponent {
     }));
     
     this.router.navigate(['/confirm'])
-  }
-
-  ngOnInit(): void {
-    console.log('levels', this.levels);
   }
 
 }

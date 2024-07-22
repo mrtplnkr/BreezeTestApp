@@ -3,11 +3,10 @@ import { EmployeeModel } from "./Employee.model";
 
 const getemployeestate=createFeatureSelector<EmployeeModel>('employee');
 
-export const getemployee=createSelector(getemployeestate,(state)=>{
+export const getEmployeeName = createSelector(getemployeestate,(state)=>{
     return state.firstname
 });
 
-export const getemployeeinfo=createSelector(getemployeestate,(state)=>{
-
+export const getEmployeeInfo = createSelector(getemployeestate,(state)=>{
     return state
 });

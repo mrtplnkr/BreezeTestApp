@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { Subscription } from 'rxjs';
 import { EmployeeModel } from 'src/app/shared/store/Employee/Employee.model';
-import { getEmployeeState } from 'src/app/shared/store/Global/App.Selectors';
+import { getEmployeeInfo } from 'src/app/shared/store/Employee/Employee.selectors';
 import { AppStateModel } from 'src/app/shared/store/Global/AppState.Model';
 
 @Component({
@@ -12,11 +12,16 @@ import { AppStateModel } from 'src/app/shared/store/Global/AppState.Model';
 })
 export class ConfirmApplicationComponent implements OnInit {
   employeeDetails: EmployeeModel | undefined;
-  constructor(private store: Store<AppStateModel>) {
+  constructor(private store: Store<AppStateModel>, private router: Router) {
   }
   ngOnInit(): void {
-    this.store.select(getEmployeeState).subscribe(res => {
-      this.employeeDetails = res;
+    this.store.select(getEmployeeInfo).subscribe(res => {
+      if (res.firstname) {
+        this.employeeDetails = res;
+      }
+      else {
+        this.router.navigate(['']);
+      }
     });
   }
   onConfirm() {
