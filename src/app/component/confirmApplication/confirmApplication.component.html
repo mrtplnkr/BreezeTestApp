@@ -1,12 +1,13 @@
 <mat-card>
     <mat-card-content>
-        <mat-label *ngIf="employeeDetails?.lookingforwork">Application submitted !</mat-label>
+        <div *ngIf="employeeDetails?.lookingforwork">
+            <mat-label>Application submitted !</mat-label>
+        </div>
 
         <mat-form-field *ngIf="!employeeDetails?.lookingforwork">
             <mat-label>Motivational letter</mat-label>
             <textarea matInput></textarea>
         </mat-form-field>
-    <br>
-    <button mat-raised-button color="primary" (click)="onConfirm()">Confirm Your Application</button>
-</mat-card-content>
+        <button mat-raised-button color="primary" (click)="onConfirm()">Confirm Your Application</button>
+    </mat-card-content>
 </mat-card>
