@@ -10,9 +10,9 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { HomeComponent } from './component/home/home.component';
 import { MenuheaderComponent } from './component/menuheader/menuheader.component';
-import { AppState } from './shared/store/Global/App.state';
 import { HttpClientModule } from '@angular/common/http';
 import { ConfirmApplicationComponent } from './component/confirmApplication/confirmApplication.component';
+import { AppState } from './shared/store/Global/App.state';
 
 @NgModule({
   declarations: [

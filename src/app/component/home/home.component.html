@@ -1,1 +1,62 @@
-<h1>Welcome</h1>
+<mat-card style="text-align: center;">
+    <mat-card-title>
+        <h1>Kokio lygio specialistas esi?</h1>
+    </mat-card-title>
+
+    <mat-card-content>
+        <form fxLayout="row" fxLayout.xs="column" [formGroup]="personform" (ngSubmit)="SaveEmployees()">
+
+            <div>
+                <mat-form-field>
+                    <mat-label>Firstname</mat-label>
+                    <input matInput formControlName="firstname">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Lastname</mat-label>
+                    <input matInput formControlName="lastname">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <mat-label>What's your level ?</mat-label>
+                    <mat-select formControlName="selectedLevel" (selectionChange)="resetConditionalValues()">
+                        <mat-option *ngFor="let level of levels" [value]="level.id">
+                            {{level.name}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                
+            </div>
+            
+            <div *ngIf="personform.controls.selectedLevel.value">
+                <div *ngIf="personform.controls.selectedLevel.value === 1">
+                    <mat-label>Kiek bus 2+2=</mat-label>
+                    <span *ngIf="formSubmitted && personform.controls.mathTest.errors">Incorrect !</span>
+                    <mat-form-field>
+                        <input matInput formControlName="mathTest" />
+                    </mat-form-field>
+                </div>
+                <div *ngIf="personform.controls.selectedLevel.value === 2">
+                    <mat-form-field>
+                        <textarea matInput formControlName="aLetterTest">
+
+                        </textarea>
+                    </mat-form-field>
+                    <span *ngIf="personform.controls.selectedLevel.errors">Incorrect !</span>
+                </div>
+            </div>
+            <div>
+                <mat-label for="lookingforwork" [ngClass]="formSubmitted && personform.controls.lookingforwork.errors ? 'error-border' : ''">
+                    <input type="checkbox" formControlName="lookingforwork" name="lookingforwork" required/>
+                    looking for work ?
+                </mat-label>
+            </div>
+            <div  fxFlex="20%">
+                <div *ngIf="formSubmitted && personform.invalid" class="error-text">Please select all fields !</div>
+                <button mat-raised-button type="submit">Submit (next)</button>
+            </div>
+
+        </form>
+    </mat-card-content>
+</mat-card>
