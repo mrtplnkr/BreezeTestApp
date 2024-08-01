@@ -15,9 +15,7 @@ import { LevelValidator } from 'src/app/validators/LevelValidator';
 export class EmployeeDetailsComponent {
   levels = LevelOptions;
   formSubmitted = false;
-  constructor(private store: Store<AppStateModel>, 
-    private builder: FormBuilder, private router: Router) {
-  }
+  constructor(private store: Store<AppStateModel>, private builder: FormBuilder, private router: Router) {}
 
   personform = this.builder.group({
     firstname: this.builder.control('', Validators.required),
@@ -39,14 +37,14 @@ export class EmployeeDetailsComponent {
     this.formSubmitted = true;
 
     if (!this.personform.valid) return;
-    
+
     this.store.dispatch(addemployee({
-      firstname: this.personform.value.firstname?this.personform.value.firstname : '',
-      lastname: this.personform.value.lastname? this.personform.value.lastname : '',
+      firstname: this.personform.value.firstname ? this.personform.value.firstname : '',
+      lastname: this.personform.value.lastname ? this.personform.value.lastname : '',
       lookingforwork: this.personform.value.lookingforwork ? this.personform.value.lookingforwork : false,
       level: this.personform.value.selectedLevel ? this.personform.value.selectedLevel : 0
     }));
-    
+
     this.router.navigate(['/confirm'])
   }
 

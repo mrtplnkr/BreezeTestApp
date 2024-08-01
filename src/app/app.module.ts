@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './Material.Module';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EmployeeDetailsComponent } from './component/employeeDetails/employeeDetails.component';
 import { MenuheaderComponent } from './component/menuheader/menuheader.component';

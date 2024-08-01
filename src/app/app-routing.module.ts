@@ -4,8 +4,8 @@ import { EmployeeDetailsComponent } from './component/employeeDetails/employeeDe
 import { ConfirmApplicationComponent } from './component/confirmApplication/confirmApplication.component';
 
 const routes: Routes = [
-  {path:"",component:EmployeeDetailsComponent},
-  {path:"confirm",component:ConfirmApplicationComponent}
+  { path: "", component: EmployeeDetailsComponent },
+  { path: "confirm", component: ConfirmApplicationComponent }
 ];
 
 @NgModule({
