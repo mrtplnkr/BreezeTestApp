@@ -27,7 +27,7 @@ export class EmployeeDetailsComponent {
     mathTest: this.builder.control(''),
     aLetterTest: this.builder.control('')
   }, {
-    validators: LevelValidator('selectedLevel')
+    validators: LevelValidator()
   })
 
   resetConditionalValues() {
