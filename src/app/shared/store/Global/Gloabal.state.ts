@@ -1,5 +1,10 @@
 import { AppStateModel } from "./AppState.Model";
 
 export const GlobalState: AppStateModel = {
-    employee: undefined
+    employee: {
+        firstname: "",
+        lastname: "",
+        lookingforwork: false,
+        level: 0
+    }
 }

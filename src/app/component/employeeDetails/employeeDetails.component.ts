@@ -3,7 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { addemployee } from 'src/app/shared/store/Employee/Employee.actions';
-import { Level, LevelOptions } from 'src/app/shared/store/Employee/Employee.model';
+import { LevelOptions } from 'src/app/shared/store/Employee/Employee.model';
 import { AppStateModel } from 'src/app/shared/store/Global/AppState.Model';
 import { LevelValidator } from 'src/app/validators/LevelValidator';
 
@@ -14,7 +14,7 @@ import { LevelValidator } from 'src/app/validators/LevelValidator';
 })
 export class EmployeeDetailsComponent {
   levels = LevelOptions;
-  formSubmitted: boolean = false;
+  formSubmitted = false;
   constructor(private store: Store<AppStateModel>, 
     private builder: FormBuilder, private router: Router) {
   }
@@ -41,10 +41,10 @@ export class EmployeeDetailsComponent {
     if (!this.personform.valid) return;
     
     this.store.dispatch(addemployee({
-      firstname: this.personform.value.firstname!,
-      lastname: this.personform.value.lastname!,
-      lookingforwork: this.personform.value.lookingforwork!,
-      level: this.personform.value.selectedLevel!
+      firstname: this.personform.value.firstname?this.personform.value.firstname : '',
+      lastname: this.personform.value.lastname? this.personform.value.lastname : '',
+      lookingforwork: this.personform.value.lookingforwork ? this.personform.value.lookingforwork : false,
+      level: this.personform.value.selectedLevel ? this.personform.value.selectedLevel : 0
     }));
     
     this.router.navigate(['/confirm'])

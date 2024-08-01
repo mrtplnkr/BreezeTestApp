@@ -1,6 +1,6 @@
 import { AbstractControl } from '@angular/forms';
 
-export function LevelValidator(controlName: string) {
+export function LevelValidator() {
     return (group: AbstractControl) => {
         const level = group.get('selectedLevel')?.value;
         const mathTest = group.get('mathTest');
@@ -11,7 +11,7 @@ export function LevelValidator(controlName: string) {
             }
         } else {
             mathTest?.setErrors(null);
-        };
+        }
         if (level === 2) {
             if (aLetterTest?.value.length === 0 || aLetterTest?.value.includes('a')) {
                 aLetterTest.setErrors({ ALetterTest: true });
